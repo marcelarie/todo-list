@@ -49,9 +49,9 @@ It is very common nowadays to have a place to save your notes so you don't forge
     - [ ] In the page header there will be a search bar where you can search all the tasks in the app including completed tasks and those belonging to custom lists:  
         - [ ] The search bar will display the results each time a new letter is entered.  
         - [ ] You will have to check that the name of the task contains the input value that you have entered.  
-        - [ ] The tasks found with the search engine will be shown in the central page container.  
+        - [ ] The tasks found with the search engine will be shown in the central page container.    
 - [ ] In each task of the task list, you will have a button to check if the task was completed without opening it, this will apply the crossed out font style in the task title.  
-    When you change a task to completed, it will be hidden from the list and you only can see the task in the completed tasks section.  
+    When you change a task to completed, it will be hidden from the list and you only can see the task in the completed tasks section.    
 - [ ] In each task of the task list, you will have a button to check if the task is important without opening it, this will apply the bold font style in the task title.  
 - [ ] In the task list, if there is a task that has a color selected, a style with that color will be applied to that task in the list.  
   
