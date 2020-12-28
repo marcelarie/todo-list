@@ -32,29 +32,28 @@ It is very common nowadays to have a place to save your notes so you don't forge
   
 ### Phase 2  
   
-    - [ ] The sidebar will have a new option, “custom lists”.  
-        - [ ] Below this option the lists that you have created manually will be shown.  
-            - [ ] In the sidebar there will be a "New list" button that will allow you to create a new list.  
-            - [ ] This button will open a modal window that lets you introduce a list name (max length 25).  
-            - [ ] The modal must have a button which you can click to close it without creating the list.  
-    - [ ] When you click in a custom list, the central container will show the tasks that belong to this list.  
-    - [ ] If you hover over a custom list with the mouse, a button will be displayed to delete the list.  
-        - [ ] If the list contains at least 1 task, instead of the list being deleted directly, a modal will open indicating that   
-             the list is not empty and if you agree to delete it along with all its tasks.  
-        - [ ] You will have two buttons, one to accept and one to cancel.  
+- [ ] The sidebar will have a new option, “custom lists”.  
+    - [ ] Below this option the lists that you have created manually will be shown.  
+        - [ ] In the sidebar there will be a "New list" button that will allow you to create a new list.  
+        - [ ] This button will open a modal window that lets you introduce a list name (max length 25).  
+        - [ ] The modal must have a button which you can click to close it without creating the list.  
+- [ ] When you click in a custom list, the central container will show the tasks that belong to this list.  
+- [ ] If you hover over a custom list with the mouse, a button will be displayed to delete the list.  
+    - [ ] If the list contains at least 1 task, instead of the list being deleted directly, a modal will open indicating that   
+         the list is not empty and if you agree to delete it along with all its tasks.  
+    - [ ] You will have two buttons, one to accept and one to cancel.  
   
 ### Phase 3  
   
-    - [ ] Filter section in the page header  
-        - [ ] In the page header there will be a search bar where you can search all the tasks in the app including completed tasks and those belonging to custom lists:  
-            - [ ] The search bar will display the results each time a new letter is entered.  
-            - [ ] You will have to check that the name of the task contains the input value that you have entered.  
-            - [ ] The tasks found with the search engine will be shown in the central page container.  
-    - [ ] In each task of the task list, you will have a button to check if the task was completed without opening it, this will apply the crossed out font style in the task title.  
-        When you change a task to completed, it will be hidden from the list and you only can see the task in the completed tasks section.  
-    - [ ] In each task of the task list, you will have a button to check if the task is important without opening it, this will apply the bold font style in the task title.  
-    - [ ] In the task list, if there is a task that has a color selected, a style with that color will be applied to that task in the list.  
-  
+- [ ] Filter section in the page header  
+    - [ ] In the page header there will be a search bar where you can search all the tasks in the app including completed tasks and those belonging to custom lists:  
+        - [ ] The search bar will display the results each time a new letter is entered.  
+        - [ ] You will have to check that the name of the task contains the input value that you have entered.  
+        - [ ] The tasks found with the search engine will be shown in the central page container.  
+- [ ] In each task of the task list, you will have a button to check if the task was completed without opening it, this will apply the crossed out font style in the task title.  
+    When you change a task to completed, it will be hidden from the list and you only can see the task in the completed tasks section.  
+- [ ] In each task of the task list, you will have a button to check if the task is important without opening it, this will apply the bold font style in the task title.  
+- [ ] In the task list, if there is a task that has a color selected, a style with that color will be applied to that task in the list.  
   
 ### Phase 4 (EXTRAS 💯)  
   
