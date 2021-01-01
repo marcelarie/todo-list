@@ -1,4 +1,13 @@
-/* :root { } */
+:root {
+    --logo-yellow: #FFE351;
+    --logo-black: #282828;
+    --logo-shadow: #FF0000;
+} 
+
+/* fonts */
+ /* 'Hanalei Fill', cursive; */
+ /* 'Roboto', sans-serif; */
+
 
 * {
     margin: unset;
@@ -6,4 +15,49 @@
     box-sizing: border-box;
     text-decoration: unset;
     color: unset;
+}
+
+
+/* welcome page */
+.welcome {
+    /* max-width: 960px; */
+    margin: 0 auto;
+    height: 100vh;
+}
+.logo {
+    font-size: 144px;
+    font-family: 'Hanalei Fill', cursive;
+    color: var(--logo-yellow);
+    text-shadow: 0 5px var(--logo-shadow);
+    text-align: center;
+    padding: 1em 0 0.5em 0;
+}
+.enter-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    font-family:'Roboto', sans-serif;
+    margin: 0 auto;
+}
+.enter-form input {
+    /* remove style */
+    -webkit-appearance: none;
+    box-shadow : none;
+    outline: none;
+
+    /* add style */
+    width: 20vw;
+    height: 5vh;
+    text-align: center;
+    font-size: 1.5em;
+    border: 3px solid var(--logo-black);
+    color: var(--logo-black);
+    border-radius: 10px;
+
+    /* separation */
+    margin: 0 auto  1em auto;
+}
+
+.welcome-buttons {
+    margin: 0 auto;
 }
