@@ -6,7 +6,7 @@ It is very common nowadays to have a place to save your notes so you don't forge
 
 ### Phase 1
 
-- [  ] Create base HTML & CSS of welcome page.
+- [x] Create base HTML & CSS of welcome page.
 - [  ] Create base HTML & CSS of registration page.
 - [  ] Create base HTML & CSS of Tasks page.
 - [  ] Create Welcome page registration form.
