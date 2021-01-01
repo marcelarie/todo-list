@@ -7,19 +7,19 @@ It is very common nowadays to have a place to save your notes so you don't forge
 ### Phase 1
 
 - [x] Create base HTML & CSS of welcome page.
-- [  ] Create base HTML & CSS of registration page.
-- [  ] Create base HTML & CSS of Tasks page.
-- [  ] Create Welcome page registration form.
-- [  ] Create Tasks classes.
-- [  ] Create profile classes.
-- [  ] Create tasks menu.
-- [  ] Create tasks functions.
-- [  ] Create points functions.
-- [  ] Create Choose a Character menu.
-- [  ] Create Choose a Character form.
-- [  ] Create the search bar.
-- [  ] Create add a new task menu.
-- [  ] ...
+- [ ] Create base HTML & CSS of registration page.
+- [ ] Create base HTML & CSS of Tasks page.
+- [ ] Create Welcome page registration form.
+- [ ] Create Tasks classes.
+- [ ] Create profile classes.
+- [ ] Create tasks menu.
+- [ ] Create tasks functions.
+- [ ] Create points functions.
+- [ ] Create Choose a Character menu.
+- [ ] Create Choose a Character form.
+- [ ] Create the search bar.
+- [ ] Create add a new task menu.
+- [ ] ...
 
 ### Requisites
 
