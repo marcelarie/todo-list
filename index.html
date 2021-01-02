@@ -19,16 +19,16 @@
 </head>
 
 <body>
-    <section class="welcome none">
+    <section class="welcome ">
         <h1 class="logo">DO OR DIE</h1>
-        <div class="enter-form">
+        <div class="enter-form input">
             <!-- <label for="uname"></label> -->
             <input spellcheck="false" type="text" placeholder="Username" name="uname" required>
             <!-- <label for="pass"></label> -->
             <input spellcheck="false" type="password" placeholder="Password" name="pass" required>
-            <div class="welcome-buttons">
-                <button id="welcome-login" type="submit">LOGIN</button>
-                <button id="welcome-sing-up" type="button">SING UP</button>
+            <div class="welcome-buttons ">
+                <button class="yellow-buttons" id="welcome-login" type="submit">LOGIN</button>
+                <button class="yellow-buttons" id="welcome-sing-up" type="button">SING UP</button>
             </div>
         </div>
     </section>
@@ -48,9 +48,12 @@
                     </span>
                 </div>
             </div>
-            <div class="register-form">
-                <label></label>
-                <input type="text">
+            <div class="register-form input">
+                <input spellcheck="false" type="text" placeholder="Username" name="uname" required>
+                <input spellcheck="false" type="mail" placeholder="your@mail.com" name="mail" required>
+                <input spellcheck="false" type="password" placeholder="Password" name="pass" required>
+                <input spellcheck="false" type="password" placeholder="Confirm password" name="consfirm-pass" required>
+                <button class="yellow-buttons register-login" id="register-login" type="submit">NEXT</button>
             </div>
         </div>
     </section>
