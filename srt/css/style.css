@@ -49,7 +49,7 @@
     width: 20vw;
     height: 5vh;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     border: 3px solid var(--logo-black);
     color: var(--logo-black);
     border-radius: 10px;
@@ -57,7 +57,31 @@
     /* separation */
     margin: 0 auto  1em auto;
 }
+.enter-form input:focus {
+    border: 5px solid var(--logo-shadow);
+}
 
 .welcome-buttons {
-    margin: 0 auto;
+    margin: 1em auto;
+}
+.welcome-buttons button {
+    /* remove style */
+    all: unset;
+
+    /* add style */
+    background-color: var(--logo-yellow);
+    padding: 1em 1em;
+    border-radius: 20px;
+    box-shadow: 0 4px var(--logo-shadow);
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: var(--logo-black);
+
+    /* separation */
+    margin: 0 0.5em;
+}
+.welcome-buttons button:active {
+    transform:translateY(5px);
+    box-shadow: 0 2px var(--logo-shadow);
 }
