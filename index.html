@@ -5,25 +5,52 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="srt/css/style.css" />
     <!-- <link rel="icon" type="image/png" href="#" /> -->
+
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- js -->
     <script defer src="srt/js/main.js" type="module"></script>
     <title>Do or Die</title>
 </head>
 
 <body>
-    <section class="welcome">
+    <section class="welcome none">
         <h1 class="logo">DO OR DIE</h1>
         <div class="enter-form">
-            <label for="uname"></label>
-            <input type="text" placeholder="Username" name="uname" required>
-            <label for="pass"></label>
-            <input type="password" placeholder="Password" name="pass" required>
+            <!-- <label for="uname"></label> -->
+            <input spellcheck="false" type="text" placeholder="Username" name="uname" required>
+            <!-- <label for="pass"></label> -->
+            <input spellcheck="false" type="password" placeholder="Password" name="pass" required>
             <div class="welcome-buttons">
                 <button id="welcome-login" type="submit">LOGIN</button>
                 <button id="welcome-sing-up" type="button">SING UP</button>
+            </div>
+        </div>
+    </section>
+    <section class="register">
+        <div class="register-container">
+            <div class="choose-character no-select">
+                <div class="character-message">
+                    <p>CHOOSE YOUR CHARACTER:</p>
+                </div>
+                <div class="character-selection">
+                    <span class="material-icons arrow-left">
+                        arrow_left
+                    </span>
+                    <div class="character"><img alt="character" src="srt/img/sprites/Mario-1.gif" /> </div>
+                    <span class="material-icons arrow-right">
+                        arrow_right
+                    </span>
+                </div>
+            </div>
+            <div class="register-form">
+                <label></label>
+                <input type="text">
             </div>
         </div>
     </section>
