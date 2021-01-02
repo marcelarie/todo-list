@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <section class="welcome ">
+    <section class="welcome none">
         <h1 class="logo">DO OR DIE</h1>
         <div class="enter-form input">
             <!-- <label for="uname"></label> -->
@@ -33,6 +33,9 @@
         </div>
     </section>
     <section class="register">
+        <nav class="register-nav">
+            <h2 class="mini-logo">DO OR DIE</h1>
+        </nav>
         <div class="register-container">
             <div class="choose-character no-select">
                 <div class="character-message">
@@ -53,7 +56,10 @@
                 <input spellcheck="false" type="mail" placeholder="your@mail.com" name="mail" required>
                 <input spellcheck="false" type="password" placeholder="Password" name="pass" required>
                 <input spellcheck="false" type="password" placeholder="Confirm password" name="consfirm-pass" required>
-                <button class="yellow-buttons register-login" id="register-login" type="submit">NEXT</button>
+                <div class="register-buttons">
+                    <button class="yellow-buttons register-login" id="register-back" type="submit">GO BACK</button>
+                    <button class="yellow-buttons register-login" id="register-next" type="submit">NEXT</button>
+                </div>
             </div>
         </div>
     </section>

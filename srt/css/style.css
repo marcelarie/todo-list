@@ -4,7 +4,7 @@
     --logo-shadow: #FF0000;
     --message-yellow: #FFD00A;
     --message-shadow: #9C0A02;
-
+    --nav-grey: #C0CDD7;
 } 
 
 /* fonts */
@@ -34,6 +34,13 @@
     text-shadow: 0 5px var(--logo-shadow);
     text-align: center;
     padding: 1em 0 0.5em 0;
+}
+.mini-logo {
+    font-size: 48px;
+    font-family: 'Hanalei Fill', cursive;
+    color: var(--message-yellow);
+    text-shadow: 0 4px var(--logo-shadow);
+    padding: 0 0.2em;
 }
 .enter-form {
     display: flex;
@@ -81,15 +88,22 @@
     font-family: 'Roboto', sans-serif;
     color: var(--logo-black);
 }
-.welcome-buttons button {
-    margin: 0 0.5em;
-}
 .yellow-buttons:active {
     transform:translateY(5px);
     box-shadow: 0 2px var(--logo-shadow);
 }
+.welcome-buttons button {
+    margin: 0 0.5em;
+}
 
 /* register */
+.register-nav {
+    position: absolute;
+    width: 100vw;
+    border-bottom: 5.5px solid var(--logo-black);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 .register-container {
     display: flex;
     flex-direction: row;
@@ -109,7 +123,7 @@
     /* font-family: 'Roboto', sans-serif; */
     font-family:'Hanalei Fill', cursive; 
     color: var(--message-yellow);
-    text-shadow: 0 5px var(--message-shadow);
+    text-shadow: 0 5px var(--logo-shadow);
 }
 .choose-character {
     display: flex;
@@ -129,6 +143,10 @@
     margin: 0 0.5em;
     width: 3em;
     text-align: center;
+}
+.register-buttons {
+    display: flex;
+    flex-direction: row;
 }
 
 
