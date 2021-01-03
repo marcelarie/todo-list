@@ -230,20 +230,25 @@
 .tasks-menu-container {
     display: flex;
     flex-direction: row;
-    border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-title {
     padding: 0.5em 1em;
+    border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-tag {
     padding: 0.5em 1em;
     flex: 3;
+    border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-button {
     padding: 0.5em 1em;
     background-color: var(--logo-yellow);
     border-left: 2.5px solid var(--logo-black);
     cursor: pointer;
+    max-width: 200px;
+    min-width: 200px;
+    text-align: center;
+    border-bottom: 3.5px solid var(--logo-black);
 }
 .add-tasks-button {
     margin: 0 auto;
