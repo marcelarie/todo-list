@@ -1,6 +1,7 @@
 
 
-function createTasks(name, tag, button) {
+function createTasks(name, tag) {
+    const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG', 'FATALITY!', 'KILLING IT', 'ONE MORE']
     const tasksMenu = document.getElementById('tasks-menu')
 
     const task = document.createElement('div')
@@ -19,7 +20,7 @@ function createTasks(name, tag, button) {
     // text
     taskText.textContent = name;
     taskTagText.textContent = tag;
-    taskButtonText.textContent = button;
+    taskButtonText.textContent = buttons[Math.floor(Math.random() * buttons.length)];
 
     task.appendChild(taskText)
     task.appendChild(taskTag)

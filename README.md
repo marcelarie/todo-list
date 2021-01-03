@@ -17,13 +17,13 @@ It is very common nowadays to have a place to save your notes so you don't forge
 - [ ] Create points functions.
 - [ ] Create Choose a Character menu.
 - [ ] Create Choose a Character form.
-- [ ] Create the search bar.
+- [x] Create the search bar.
 - [ ] Create add a new task menu.
 - [ ] ...
 
 ## FUNCTIONS
 
-- [ ] To create tasks.
+- [x] To create tasks.
 - [ ] To create task tags.
 - [ ] To add tags to tasks.
 - [ ] To delete tasks.
