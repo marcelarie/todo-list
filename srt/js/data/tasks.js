@@ -1,7 +1,7 @@
 
-
-function createTasks(name, tag) {
+function createTasks(name, tag, id = Math.random()) {
     const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG', 'FATALITY!', 'KILLING IT', 'ONE MORE']
+
     const tasksMenu = document.getElementById('tasks-menu')
 
     const task = document.createElement('div')
@@ -13,6 +13,7 @@ function createTasks(name, tag) {
 
     // classes
     task.classList.add('tasks-menu-container')
+    task.id = id
     taskText.classList.add('tasks-menu-title')
     taskTag.classList.add('tasks-menu-tag')
     taskButton.classList.add('tasks-menu-button', 'no-select')
@@ -32,5 +33,11 @@ function createTasks(name, tag) {
     tasksMenu.appendChild(task)
 }
 
-export {createTasks}
+function deleteTasks(id) {
+    const tasksMenu = document.getElementById('tasks-menu')
+    const task = document.getElementById(id)
+    tasksMenu.removeChild(task)
+}
+
+export {createTasks, deleteTasks}
 
