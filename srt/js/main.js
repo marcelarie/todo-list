@@ -1,4 +1,5 @@
 import {createTasks} from "./data/tasks.js"
 
-createTasks('test', 'Completed', 'FINISH IT!')
-createTasks('test', 'Completed', 'IT!')
+createTasks('test', '✅', 'FINISH IT!')
+createTasks('test', '❗', 'IT!')
+createTasks('This task its extense and I need to explain it', '', 'FINISH IT!')

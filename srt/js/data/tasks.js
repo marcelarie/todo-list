@@ -33,4 +33,3 @@ function createTasks(name, tag, button) {
 
 export {createTasks}
 
-createTasks('test', 'Completed', 'FINISH IT!')
