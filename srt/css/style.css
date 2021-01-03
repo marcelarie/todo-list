@@ -35,13 +35,6 @@
     text-align: center;
     padding: 1em 0 0.5em 0;
 }
-.mini-logo {
-    font-size: 48px;
-    font-family: 'Hanalei Fill', cursive;
-    color: var(--message-yellow);
-    text-shadow: 0 4px var(--logo-shadow);
-    padding: 0 0.2em;
-}
 .enter-form {
     display: flex;
     flex-direction: column;
@@ -97,13 +90,6 @@
 }
 
 /* register */
-.register-nav {
-    position: absolute;
-    width: 100vw;
-    border-bottom: 5.5px solid var(--logo-black);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
 .register-container {
     display: flex;
     flex-direction: row;
@@ -168,6 +154,91 @@
 .character img {
     min-height: 400px;
     margin: 3em 0;
+}
+
+/* tasks */
+.tasks-nav {
+    position: sticky;
+    width: 100vw;
+    border-bottom: 3.5px solid var(--logo-black);
+    display: flex;
+    margin: auto 0;
+}
+.mini-logo-container {
+    padding: 0 2% 0 1%;
+}
+.mini-logo {
+    font-size: 48px;
+    font-family: 'Hanalei Fill', cursive;
+    color: var(--message-yellow);
+    text-shadow: 0 4px var(--logo-shadow);
+    margin-bottom: 5px;
+}
+.tasks-nav-search {
+    flex: 3;
+    margin: auto 0;
+}
+.tasks-nav-menu { 
+    border-radius: 50%;
+    border: 3.5px solid var(--logo-black);
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    margin: auto 1% auto 5%;
+    cursor: pointer;
+}
+.tasks-nav-menu img { 
+    height: 80px;
+    margin: -0.50em;
+}
+.tasks-nav-search input {
+    width: 100%;
+    margin: auto 0;
+    vertical-align: center;
+    text-align: left;
+    padding: 0 20px;
+}
+.tasks-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    font-family:'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+.tasks-sidebar {
+    flex: 1;
+    display: flex;
+    height: 100vh;
+    border-right: 3.5px solid var(--logo-black);
+    flex-direction: column;
+}
+.tasks-sidebar-button {
+    padding: 0.5em 1em;
+    text-align: center;
+    border-bottom: 3.5px solid var(--logo-black);
+    cursor: pointer;
+}
+/* taks menu containers */
+.tasks-menu {
+    flex: 4;
+}
+.tasks-menu-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3.5px solid var(--logo-black);
+}
+.tasks-menu-title {
+    padding: 0.5em 1em;
+}
+.tasks-menu-tag {
+    padding: 0.5em 1em;
+    flex: 3;
+}
+.tasks-menu-button {
+    padding: 0.5em 1em;
+    background-color: var(--logo-yellow);
+    border-left: 2.5px solid var(--logo-black);
+    cursor: pointer;
 }
 
 /* hide & none */
