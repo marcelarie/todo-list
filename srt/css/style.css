@@ -200,6 +200,9 @@
     text-align: left;
     padding: 0 20px;
 }
+.tasks-nav-search input:focus {
+    border: 4px solid var(--logo-black);
+}
 .tasks-container {
     display: flex;
     flex-direction: row;
@@ -254,4 +257,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.fixed {
+    position: fixed;
+    width: 20%;
 }
