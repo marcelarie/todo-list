@@ -9,3 +9,13 @@ createTasks('This task its extense and I need to explain it', '')
 
 
 
+// listeners
+
+const taskSideBar = document.getElementById('tasks-sidebar')
+
+taskSideBar.addEventListener('click', e => {
+    if (e.target.href) {
+        // TODO
+        // function to extract tag
+    }
+})
