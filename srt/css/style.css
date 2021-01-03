@@ -245,7 +245,16 @@
     border-left: 2.5px solid var(--logo-black);
     cursor: pointer;
 }
-
+.add-tasks-button {
+    margin: 0 auto;
+}
+.add-tasks-button p {
+    font-size: 1.5em;
+    padding: 0.25em 1em;
+    text-align: center;
+    color: var(--logo-black);
+    cursor:pointer;
+}
 /* hide & none */
 .none {
     display: none;
