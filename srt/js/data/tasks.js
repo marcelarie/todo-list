@@ -1,5 +1,8 @@
+import {folder} from '../model/folder.js'
+
 
 function createTasks(name, tag, id = Math.random()) {
+    folder[name] = [tag, id]
     const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG', 'FATALITY!', 'KILLING IT', 'ONE MORE']
 
     const tasksMenu = document.getElementById('tasks-menu')
@@ -33,11 +36,26 @@ function createTasks(name, tag, id = Math.random()) {
     tasksMenu.appendChild(task)
 }
 
-function deleteTasks(id) {
+function deleteTasks(task) {
     const tasksMenu = document.getElementById('tasks-menu')
-    const task = document.getElementById(id)
+    const taskDiv = document.getElementById(id)
+
+    const list = folder.folderNames();
+
+
     tasksMenu.removeChild(task)
 }
 
-export {createTasks, deleteTasks}
+function filterTasks(tag) {
+    const list = folder.folderNames();
+
+    list.forEach(itemList => {
+        const currentTask = document.getElementById(itemList[1])
+        itemList[0] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+    })
+
+}
+
+
+export {createTasks, deleteTasks, filterTasks}
 

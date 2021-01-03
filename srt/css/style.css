@@ -240,7 +240,7 @@
     border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-tag {
-    padding: 0.5em 1em;
+    padding: 0.5em 0;
     flex: 3;
     border-bottom: 3.5px solid var(--logo-black);
 }
