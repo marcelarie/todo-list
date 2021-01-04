@@ -1,15 +1,11 @@
-import {createTasks, deleteButtonListener, deleteTasks, filterTasks, taskSideBarListener, taskHoverListener} from "./data/tasks.js"
-import {folder} from './model/folder.js'
+import {allListeners, createTasks, renderTasks} from "./data/tasks.js"
 
-createTasks('test', '✅')
-createTasks('treure a la reina', '❗')
-createTasks('This task its extense and I need to explain it', '')
+
+renderTasks();
 
 
 
 
 
 // listeners
-taskSideBarListener();
-deleteButtonListener();
-taskHoverListener();
+allListeners();
