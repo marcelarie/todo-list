@@ -1,6 +1,7 @@
 import {folder} from '../model/folder.js'
 
 
+//task generator
 function createTasks(name, tag, id = Math.random()) {
     folder[name] = [tag, id]
     const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG', 'FATALITY!', 'KILLING IT', 'ONE MORE']
@@ -17,6 +18,7 @@ function createTasks(name, tag, id = Math.random()) {
 
     // classes
     task.classList.add('tasks-menu-container')
+    tag === '✅' ? task.classList.add('none') : 0;
     task.id = id;
     taskText.classList.add('tasks-menu-title')
     taskTag.classList.add('tasks-menu-tag')
@@ -54,9 +56,16 @@ function filterTasks(tag) {
 
     list.forEach(itemList => {
         const currentTask = document.getElementById(itemList[1])
-        itemList[0] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+        if (tag.length > 0) {
+            itemList[0] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+        } else {
+            itemList[0] === '✅' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+        }
     })
+}
 
+function toggleNone(element) {
+    element ? element.classList.toggle('none') : 0;
 }
 
 // listeners
@@ -83,15 +92,14 @@ function taskHoverListener() {
     const taskBar = document.querySelectorAll('.tasks-menu-container')
     taskBar.forEach(taskk => {
         taskk.addEventListener('mouseenter', t => {
-            const deleteButtonTask = t.target.children[2]
-            deleteButtonTask ? deleteButtonTask.classList.toggle('none') : 0;
+            toggleNone(t.target.children[2])
         })
         taskk.addEventListener('mouseleave', t => {
-            const deleteButtonTask = t.target.children[2]
-            deleteButtonTask ? deleteButtonTask.classList.toggle('none') : 0;
+            toggleNone(t.target.children[2])
         })
     })
 }
+
 
 
 export {createTasks, deleteTasks, filterTasks, taskSideBarListener, deleteButtonListener, taskHoverListener}

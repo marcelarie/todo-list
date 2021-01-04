@@ -218,6 +218,7 @@
     border-right: 3.5px solid var(--logo-black);
     border-bottom: 3.5px solid var(--logo-black);
     flex-direction: column;
+    width: 20%;
 }
 .tasks-sidebar-button {
     padding: 0.5em 1em;
