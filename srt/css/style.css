@@ -11,6 +11,9 @@
  /* 'Hanalei Fill', cursive; */
  /* 'Roboto', sans-serif; */
 
+body {
+    /* background-color: darkgrey; */
+}
 
 * {
     margin: unset;
@@ -268,16 +271,27 @@
     color: var(--logo-shadow);
     text-shadow: 0 4px var(--nav-grey);
 }
-.add-tasks-button {
-    margin: 0 auto;
-    border-bottom: 3.5px solid var(--logo-black);
-}
-.add-tasks-button p {
-    font-size: 1.5em;
-    padding: 0.14em 1em;
-    text-align: center;
+.material-icons.add-tasks-button {
+    font-size: 2em;
     color: var(--logo-black);
+    transition: all ease-in-out 0.3s;
+}
+.add-tasks-button {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
     cursor:pointer;
+    background-color: var(--logo-yellow);
+    border-radius: 50%;
+    border: 5px solid var(--logo-black);
+}
+.material-icons.add-tasks-button:hover {
+    transition: 0.3s;
+}
+.material-icons.add-tasks-button:active {
+    transform: scale(.95);
+    background-color: var(--message-yellow);
+    transition: 0s;
 }
 /* hide & none */
 .none {
@@ -297,4 +311,8 @@
 .fixed {
     position: fixed;
     width: 20%;
+}
+/* hide scrollbars */
+body::-webkit-scrollbar {
+    display: none; /* Chrome */
 }
