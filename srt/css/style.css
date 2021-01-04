@@ -254,6 +254,19 @@
     text-align: center;
     border-bottom: 3.5px solid var(--logo-black);
 }
+.tasks-button-delete {
+    cursor: pointer;
+    padding: 0 0.5em;
+    color: var(--logo-shadow);
+    text-shadow: 0 4px var(--logo-black);
+    border-bottom: 3.5px solid var(--logo-black);
+    font-family: 'Hanalei Fill', cursive;
+    font-size: 1.5em;
+}
+.tasks-button-delete:active {
+    color: var(--logo-shadow);
+    text-shadow: 0 4px var(--nav-grey);
+}
 .add-tasks-button {
     margin: 0 auto;
     border-bottom: 3.5px solid var(--logo-black);
