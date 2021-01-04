@@ -12,7 +12,8 @@ function createTasks(name, tag, id = Math.random()) {
     const taskTag = document.createElement('div')
     const taskButton = document.createElement('div')
     const taskButtonDelete = document.createElement('div')
-    const taskText = document.createElement('p')
+    const taskText = document.createElement('div')
+    const taskTextInput = document.createElement('input')
     const taskTagText = document.createElement('p')
     const taskButtonText = document.createElement('p')
 
@@ -24,15 +25,17 @@ function createTasks(name, tag, id = Math.random()) {
     taskTag.classList.add('tasks-menu-tag')
     taskButton.classList.add('tasks-menu-button', 'no-select')
     taskButtonDelete.classList.add('tasks-button-delete', 'no-select', 'none')
+    taskTextInput.setAttribute('spellcheck', 'false')
 
     // text
-    taskText.textContent = name;
+    taskTextInput.value = name;
     taskTagText.textContent = tag;
     taskButtonText.textContent = buttons[Math.floor(Math.random() * buttons.length)];
     taskButtonDelete.textContent = 'X'
 
-    task.appendChild(taskText)
+    taskText.appendChild(taskTextInput)
     task.appendChild(taskTag)
+    task.appendChild(taskText)
     task.appendChild(taskButtonDelete)
     task.appendChild(taskButton)
 

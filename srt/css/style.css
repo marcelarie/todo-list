@@ -240,12 +240,21 @@ body {
     height: 55.5px;
 }
 .tasks-menu-title {
-    padding: 0.5em 1em;
+    padding: 0.5em 0em;
+    margin: auto 0;
     border-bottom: 3.5px solid var(--logo-black);
+    flex: 3;
+}
+.tasks-menu-title input {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    font-family:'Roboto', sans-serif;
+    font-size: 1em;
+    min-width: 250px;
 }
 .tasks-menu-tag {
-    padding: 0.5em 0;
-    flex: 3;
+    padding: 0.5em 0.5em;
     border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-button {
