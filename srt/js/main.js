@@ -1,4 +1,4 @@
-import {createTasks, deleteButtonListener, deleteTasks, filterTasks, taskSideBarListener} from "./data/tasks.js"
+import {createTasks, deleteButtonListener, deleteTasks, filterTasks, taskSideBarListener, taskHoverListener} from "./data/tasks.js"
 import {folder} from './model/folder.js'
 
 createTasks('test', '✅')
@@ -12,3 +12,4 @@ createTasks('This task its extense and I need to explain it', '')
 // listeners
 taskSideBarListener();
 deleteButtonListener();
+taskHoverListener();

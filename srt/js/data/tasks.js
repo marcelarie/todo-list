@@ -21,7 +21,7 @@ function createTasks(name, tag, id = Math.random()) {
     taskText.classList.add('tasks-menu-title')
     taskTag.classList.add('tasks-menu-tag')
     taskButton.classList.add('tasks-menu-button', 'no-select')
-    taskButtonDelete.classList.add('tasks-button-delete', 'no-select')
+    taskButtonDelete.classList.add('tasks-button-delete', 'no-select', 'none')
 
     // text
     taskText.textContent = name;
@@ -79,7 +79,20 @@ function deleteButtonListener() {
         })
     })
 }
+function taskHoverListener() {
+    const taskBar = document.querySelectorAll('.tasks-menu-container')
+    taskBar.forEach(taskk => {
+        taskk.addEventListener('mouseenter', t => {
+            const deleteButtonTask = t.target.children[2]
+            deleteButtonTask ? deleteButtonTask.classList.toggle('none') : 0;
+        })
+        taskk.addEventListener('mouseleave', t => {
+            const deleteButtonTask = t.target.children[2]
+            deleteButtonTask ? deleteButtonTask.classList.toggle('none') : 0;
+        })
+    })
+}
 
 
-export {createTasks, deleteTasks, filterTasks, taskSideBarListener, deleteButtonListener}
+export {createTasks, deleteTasks, filterTasks, taskSideBarListener, deleteButtonListener, taskHoverListener}
 

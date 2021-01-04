@@ -282,6 +282,9 @@
 .none {
     display: none;
 }
+.hide {
+    visibility: hidden;
+}
 .no-select{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
