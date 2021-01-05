@@ -2,7 +2,7 @@ import {folder} from '../model/folder.js'
 
 
 //task generator
-function createTasks(name, tag, id, element) {
+function createTasks(name, tag, id) {
     folder[id] = [name, tag]
     const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG!!!', 'FATALITY!', 'KILLING IT', 'ONE MORE']
 
@@ -44,16 +44,26 @@ function createTasks(name, tag, id, element) {
     taskTag.appendChild(taskTagText)
     taskButton.appendChild(taskButtonText)
 
-    element ? element.after(task) : tasksMenu.appendChild(task);
+    tasksMenu.appendChild(task);
+    return id;
+}
+
+function focusId(id) {
+    const parentElement = document.getElementById(id)
+    const elementToFocus = parentElement.children[1].children[0]
+    elementToFocus.focus()
 }
 
 function saveTasks(name, tag) {
-    folder[Math.random()] = [name, tag]
+    const id = Math.random();
+    folder[id] = [name, tag]
+    return id
 }
+saveTasks('Treure a la reina', '')
+saveTasks('Estudia', '')
+saveTasks('Entrenar anillas', '')
 
-saveTasks('this', '')
-
-function renderTasks(element) {
+function renderTasks() {
     const tasksMenu = document.getElementById('tasks-menu')
     tasksMenu.innerHTML = ''
     const entries = Object.entries(folder)
@@ -61,7 +71,7 @@ function renderTasks(element) {
         const id = entrie[0]
         const name = entrie[1][0]
         const tag = entrie[1][1]
-        element ? createTasks(name, tag, id, element) : createTasks(name, tag, id);
+        createTasks(name, tag, id)
     })
 }
 
@@ -130,7 +140,12 @@ function taskInputListener() {
     const allTaskInputs = document.querySelectorAll('.tasks-menu-input');
     allTaskInputs.forEach(input => {
         input.addEventListener('keydown', e => {
-            e.key === 'Enter' ? renderTasks(input.parentElement.parentElement) : 0;
+            if (e.key === 'Enter') {
+                const id = saveTasks(' ', ' ')
+                renderTasks();
+                focusId(id);
+                allListeners();
+            }
         })
     })
 }

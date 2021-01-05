@@ -6,6 +6,5 @@ renderTasks();
 
 
 
-
 // listeners
 allListeners();

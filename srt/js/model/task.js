@@ -7,6 +7,5 @@ class Task {
 }
 
 const t = new Task('yes', '')
-console.log(t)
 
 export {Task}
