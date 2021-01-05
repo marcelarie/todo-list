@@ -71,8 +71,8 @@ function focusId(id) {
 
 function saveTasks(name, tag) {
     const id = Math.random();
-    folder[id] = [name, tag]
-    return id
+    folder[id] = [name, tag];
+    return id;
 }
 
 function renderTasks() {
@@ -103,7 +103,13 @@ function filterTasks(tag) {
         if (tag.length > 0) {
             itemList[1][1] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
         } else {
-            itemList[1][1] === '✅' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+            itemList[1][1] === '✓' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+            if (list.length === 1 && list[0][1][1] !== '') {
+                saveTasksValue();
+                saveTasks(' ', ' ')
+                renderTasks();
+                allListeners();
+            }
         }
     })
 }
@@ -146,17 +152,17 @@ function deleteButtonListener() {
     })
 }
 function taskHoverListener() {
-    // document.addEventListener('mouseover', () => {
     const taskBar = document.querySelectorAll('.tasks-menu-container')
-    taskBar.forEach(taskk => {
-        taskk.addEventListener('mouseenter', t => {
-            toggleNone(t.target.children[2])
+    if (taskBar.length > 1) {
+        taskBar.forEach(taskk => {
+            taskk.addEventListener('mouseenter', t => {
+                toggleNone(t.target.children[2])
+            })
+            taskk.addEventListener('mouseleave', t => {
+                toggleNone(t.target.children[2])
+            })
         })
-        taskk.addEventListener('mouseleave', t => {
-            toggleNone(t.target.children[2])
-        })
-    })
-    // })
+    }
 }
 
 function taskInputListener() {
@@ -192,6 +198,10 @@ function taskImportantListener() {
             if (textButton === '!') {
                 e.target.innerHTML = '';
                 folder[e.target.parentNode.parentNode.id][1] = ''
+            } else if (textButton === '✓') {
+                e.target.innerHTML = '';
+                folder[e.target.parentNode.parentNode.id][1] = ''
+                e.target.parentNode.parentNode.classList.toggle('none')
             } else {
                 e.target.innerHTML = '!';
                 folder[e.target.parentNode.parentNode.id][1] = '!'
