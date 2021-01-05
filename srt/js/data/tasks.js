@@ -1,9 +1,10 @@
 import {folder} from '../model/folder.js'
+import {saveOnLocalStorage, getFromLocalStorage} from './local-storage.js'
 
 
 //task generator
 function createTasks(name, tag, id) {
-    folder[id] = [name, tag]
+    folder['tasks'][id] = [name, tag]
     const buttons = ['DESTROY IT!', 'DONE', 'FINISH ME', 'SPANG!!!', 'FATALITY!', 'KILLING IT', 'ONE MORE']
 
     const tasksMenu = document.getElementById('tasks-menu')
@@ -71,14 +72,14 @@ function focusId(id) {
 
 function saveTasks(name, tag) {
     const id = Math.random();
-    folder[id] = [name, tag];
+    folder['tasks'][id] = [name, tag];
     return id;
 }
 
 function renderTasks() {
     const tasksMenu = document.getElementById('tasks-menu')
     tasksMenu.innerHTML = ''
-    const entries = Object.entries(folder)
+    const entries = Object.entries(folder['tasks'])
     entries.forEach(entrie => {
         const id = entrie[0]
         const name = entrie[1][0]
@@ -92,11 +93,12 @@ function deleteTasks(id) {
     const currentTask = document.getElementById(id)
 
     taskMenu.removeChild(currentTask)
-    delete folder[id]
+    delete folder['tasks'][id]
+    saveOnLocalStorage(folder['tasks']);
 }
 
 function filterTasks(tag) {
-    const list = Object.entries(folder)
+    const list = Object.entries(folder['tasks'])
 
     list.forEach(itemList => {
         const currentTask = document.getElementById(itemList[0])
@@ -119,15 +121,14 @@ function toggleNone(element) {
 }
 
 function saveTasksValue() {
-    const folderItems = Object.entries(folder)
+    const folderItems = Object.entries(folder['tasks'])
     folderItems.forEach(item => {
         const id = item[0]
         console.log(item[0])
         const taskDiv = document.getElementById(id)
         const newText = taskDiv.children[1].children[0];
-        folder[id][0] = newText.value
+        folder['tasks'][id][0] = newText.value
     })
-
 }
 
 // listeners
@@ -177,6 +178,8 @@ function taskInputListener() {
                 renderTasks();
                 focusId(id);
                 allListeners();
+                saveOnLocalStorage(folder['tasks']);
+                console.log(folder['tasks'])
             }
             if (e.key === 'Backspace' && input.value <= 0) {
                 saveTasksValue();
@@ -184,6 +187,7 @@ function taskInputListener() {
                 renderTasks();
                 previousTask ? focusId(previousTask.id) : 0;
                 allListeners();
+                saveOnLocalStorage(folder['tasks']);
             }
         })
     })
@@ -197,14 +201,14 @@ function taskImportantListener() {
             let textButton = e.target.innerHTML;
             if (textButton === '!') {
                 e.target.innerHTML = '';
-                folder[e.target.parentNode.parentNode.id][1] = ''
+                folder['tasks'][e.target.parentNode.parentNode.id][1] = ''
             } else if (textButton === '✓') {
                 e.target.innerHTML = '';
-                folder[e.target.parentNode.parentNode.id][1] = ''
+                folder['tasks'][e.target.parentNode.parentNode.id][1] = ''
                 e.target.parentNode.parentNode.classList.toggle('none')
             } else {
                 e.target.innerHTML = '!';
-                folder[e.target.parentNode.parentNode.id][1] = '!'
+                folder['tasks'][e.target.parentNode.parentNode.id][1] = '!'
             }
         })
     })
@@ -223,7 +227,7 @@ function finishTaskListener() {
 
 function completeTask(task) {
     task.children[0].children[0].innerHTML = '✓'
-    folder[task.id][1] = '✓'
+    folder['tasks'][task.id][1] = '✓'
     task.classList.toggle('none')
     tagColor(task.children[0].children[0].textContent, task.children[0].children[0])
 }
