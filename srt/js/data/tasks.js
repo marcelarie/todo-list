@@ -59,9 +59,9 @@ function saveTasks(name, tag) {
     folder[id] = [name, tag]
     return id
 }
-saveTasks('Treure a la reina', '')
-saveTasks('Estudia', '')
-saveTasks('Entrenar anillas', '')
+saveTasks('Entrenar anillas', '✅')
+saveTasks('Treure la reina', '')
+saveTasks('Correr', '')
 
 function renderTasks() {
     const tasksMenu = document.getElementById('tasks-menu')
@@ -85,14 +85,14 @@ function deleteTasks(id) {
 }
 
 function filterTasks(tag) {
-    const list = folder.folderNames();
+    const list = Object.entries(folder)
 
     list.forEach(itemList => {
-        const currentTask = document.getElementById(itemList[1])
+        const currentTask = document.getElementById(itemList[0])
         if (tag.length > 0) {
-            itemList[0] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+            itemList[1][1] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
         } else {
-            itemList[0] === '✅' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
+            itemList[1][1] === '✅' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
         }
     })
 }
@@ -141,6 +141,7 @@ function taskInputListener() {
     allTaskInputs.forEach(input => {
         input.addEventListener('keydown', e => {
             if (e.key === 'Enter') {
+                saveTasksValue();
                 const id = saveTasks(' ', ' ')
                 renderTasks();
                 focusId(id);
@@ -150,6 +151,20 @@ function taskInputListener() {
     })
 }
 
+function saveTasksValue() {
+    const folderItems = Object.entries(folder)
+    console.log(folderItems)
+    folderItems.forEach(item => {
+        const id = item[0]
+        const taskDiv = document.getElementById(id)
+        const newText = taskDiv.children[1].children[0];
+        console.log(newText.value)
+        folder[id][0] = newText.value
+    })
+
+}
+
+
 function allListeners() {
     taskSideBarListener();
     deleteButtonListener();
@@ -158,5 +173,5 @@ function allListeners() {
 }
 
 
-export {createTasks, deleteTasks, filterTasks, allListeners, renderTasks}
+export {createTasks, deleteTasks, filterTasks, allListeners, renderTasks, saveTasksValue}
 
