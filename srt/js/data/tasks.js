@@ -25,6 +25,7 @@ function createTasks(name, tag, id) {
     taskTextInput.classList.add('tasks-menu-input')
     taskTag.classList.add('tasks-menu-tag')
     taskButton.classList.add('tasks-menu-button', 'no-select')
+    taskTagText.classList.add('no-select', 'task-important-button')
     taskButtonDelete.classList.add('tasks-button-delete', 'no-select', 'none')
     taskTextInput.setAttribute('spellcheck', 'false')
     taskTextInput.setAttribute('maxlength', '40')
@@ -59,9 +60,6 @@ function saveTasks(name, tag) {
     folder[id] = [name, tag]
     return id
 }
-saveTasks('Entrenar anillas', '✅')
-saveTasks('Treure la reina', '')
-saveTasks('Correr', '')
 
 function renderTasks() {
     const tasksMenu = document.getElementById('tasks-menu')
@@ -99,6 +97,19 @@ function filterTasks(tag) {
 
 function toggleNone(element) {
     element ? element.classList.toggle('none') : 0;
+}
+
+function saveTasksValue() {
+    const folderItems = Object.entries(folder)
+    console.log(folderItems)
+    folderItems.forEach(item => {
+        const id = item[0]
+        const taskDiv = document.getElementById(id)
+        const newText = taskDiv.children[1].children[0];
+        console.log(newText.value)
+        folder[id][0] = newText.value
+    })
+
 }
 
 // listeners
@@ -151,17 +162,21 @@ function taskInputListener() {
     })
 }
 
-function saveTasksValue() {
-    const folderItems = Object.entries(folder)
-    console.log(folderItems)
-    folderItems.forEach(item => {
-        const id = item[0]
-        const taskDiv = document.getElementById(id)
-        const newText = taskDiv.children[1].children[0];
-        console.log(newText.value)
-        folder[id][0] = newText.value
-    })
 
+function taskImportantListener() {
+    const allTaskTagMenus = document.querySelectorAll('.task-important-button')
+    allTaskTagMenus.forEach(tag => {
+        tag.addEventListener('click', e => {
+            let textButton = e.target.innerHTML;
+            if (textButton === '!') {
+                e.target.innerHTML = '';
+                folder[e.target.parentNode.parentNode.id][1] = ''
+            } else {
+                e.target.innerHTML = '!';
+                folder[e.target.parentNode.parentNode.id][1] = '!'
+            }
+        })
+    })
 }
 
 
@@ -170,8 +185,9 @@ function allListeners() {
     deleteButtonListener();
     taskHoverListener();
     taskInputListener();
+    taskImportantListener();
 }
 
 
-export {createTasks, deleteTasks, filterTasks, allListeners, renderTasks, saveTasksValue}
+export {createTasks, deleteTasks, filterTasks, allListeners, renderTasks, saveTasksValue, saveTasks}
 

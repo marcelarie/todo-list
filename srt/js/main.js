@@ -1,5 +1,7 @@
-import {allListeners, createTasks, renderTasks, saveTasksValue} from "./data/tasks.js"
+import {allListeners, createTasks, renderTasks, saveTasks} from "./data/tasks.js"
 
+// empty task to start
+saveTasks('', '!')
 
 renderTasks();
 

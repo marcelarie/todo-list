@@ -13,7 +13,7 @@ It is very common nowadays to have a place to save your notes so you don't forge
 - [x] Create Tasks classes.
 - [ ] Create profile classes.
 - [ ] Create tasks menu.
-- [ ] Create tasks functions.
+- [x] Create tasks functions.
 - [ ] Create points functions.
 - [ ] Create Choose a Character menu.
 - [ ] Create Choose a Character form.

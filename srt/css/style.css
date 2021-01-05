@@ -255,8 +255,23 @@ body {
     min-width: 250px;
 }
 .tasks-menu-tag {
-    padding: 0.5em 0.5em;
+    padding: 0.3em 0.5em;
     border-bottom: 3.5px solid var(--logo-black);
+}
+.tasks-menu-tag p:active {
+    border: 2px solid var(--logo-black);
+}
+.tasks-menu-tag p {
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid var(--nav-grey);
+    color: var(--logo-shadow);
+    border-radius: 30%;
+    min-height: 2.5rem;
+    max-height: 2.5rem;
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+    text-align: center;
 }
 .tasks-menu-button {
     padding: 0.5em 1em;
@@ -286,7 +301,7 @@ body {
     color: var(--logo-black);
     transition: all ease-in-out 0.3s;
 }
-.add-tasks-button {
+.user-points {
     position: absolute;
     bottom: 5%;
     right: 3%;
@@ -294,11 +309,18 @@ body {
     background-color: var(--logo-yellow);
     border-radius: 50%;
     border: 5px solid var(--logo-black);
+    margin: auto 0;
+    padding: 0.5em;
+    cursor: pointer;
 }
-.material-icons.add-tasks-button:hover {
+.user-points span {
+    font-size: 1.5em;
+    text-shadow: 0 3px var(--message-shadow);
+}
+.user-points:hover {
     transition: 0.3s;
 }
-.material-icons.add-tasks-button:active {
+.user-points:active {
     transform: scale(.95);
     background-color: var(--message-yellow);
     transition: 0s;
