@@ -76,10 +76,9 @@ function renderTasks() {
 function deleteTasks(id) {
     const taskMenu = document.getElementById('tasks-menu')
     const currentTask = document.getElementById(id)
-    const taskName = currentTask.children[0].textContent
 
     taskMenu.removeChild(currentTask)
-    delete folder[taskName]
+    delete folder[id]
 }
 
 function filterTasks(tag) {
@@ -101,12 +100,11 @@ function toggleNone(element) {
 
 function saveTasksValue() {
     const folderItems = Object.entries(folder)
-    console.log(folderItems)
     folderItems.forEach(item => {
         const id = item[0]
+        console.log(item[0])
         const taskDiv = document.getElementById(id)
         const newText = taskDiv.children[1].children[0];
-        console.log(newText.value)
         folder[id][0] = newText.value
     })
 
@@ -150,12 +148,21 @@ function taskHoverListener() {
 function taskInputListener() {
     const allTaskInputs = document.querySelectorAll('.tasks-menu-input');
     allTaskInputs.forEach(input => {
+        const taskParent = input.parentNode.parentNode;
+        const previousTask = taskParent.previousSibling
         input.addEventListener('keydown', e => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && input.value.length > 1) {
                 saveTasksValue();
                 const id = saveTasks(' ', ' ')
                 renderTasks();
                 focusId(id);
+                allListeners();
+            }
+            if (e.key === 'Backspace' && input.value <= 0) {
+                saveTasksValue();
+                previousTask ? deleteTasks(taskParent.id) : 0
+                renderTasks();
+                previousTask ? focusId(previousTask.id) : 0;
                 allListeners();
             }
         })
