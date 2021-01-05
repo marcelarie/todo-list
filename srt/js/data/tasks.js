@@ -19,7 +19,7 @@ function createTasks(name, tag, id) {
 
     // classes
     task.classList.add('tasks-menu-container')
-    tag === '✅' ? task.classList.add('none') : 0;
+    tag === '✓' ? task.classList.add('none') : 0;
     task.id = id;
     taskText.classList.add('tasks-menu-title')
     taskTextInput.classList.add('tasks-menu-input')
@@ -29,6 +29,8 @@ function createTasks(name, tag, id) {
     taskButtonDelete.classList.add('tasks-button-delete', 'no-select', 'none')
     taskTextInput.setAttribute('spellcheck', 'false')
     taskTextInput.setAttribute('maxlength', '40')
+
+    tagColor(tag, taskTagText)
 
     // text
     taskTextInput.value = name;
@@ -47,6 +49,18 @@ function createTasks(name, tag, id) {
 
     tasksMenu.appendChild(task);
     return id;
+}
+
+function tagColor(tag, tagText) {
+    if (tag === '✓') {
+        tagText.classList.remove('red-color')
+        tagText.classList.add('green-color')
+    } else if (tag === '!') {
+        tagText.classList.remove('green-color')
+        tagText.classList.add('red-color')
+    } else {
+        tagText.classList.add('red-color')
+    }
 }
 
 function focusId(id) {
@@ -186,6 +200,24 @@ function taskImportantListener() {
     })
 }
 
+function finishTaskListener() {
+    const allTaskFinishButtons = document.querySelectorAll('.tasks-menu-button')
+    allTaskFinishButtons.forEach(button => {
+        button.addEventListener('click', e => {
+            let taskBar = {};
+            e.target.children.length > 0 ? taskBar = e.target.parentElement : taskBar = e.target.parentElement.parentElement;
+            completeTask(taskBar)
+        })
+    })
+}
+
+function completeTask(task) {
+    task.children[0].children[0].innerHTML = '✓'
+    folder[task.id][1] = '✓'
+    task.classList.toggle('none')
+    tagColor(task.children[0].children[0].textContent, task.children[0].children[0])
+}
+
 
 function allListeners() {
     taskSideBarListener();
@@ -193,6 +225,7 @@ function allListeners() {
     taskHoverListener();
     taskInputListener();
     taskImportantListener();
+    finishTaskListener();
 }
 
 

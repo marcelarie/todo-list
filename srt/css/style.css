@@ -265,7 +265,6 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     border: 2px solid var(--nav-grey);
-    color: var(--logo-shadow);
     border-radius: 30%;
     min-height: 2.5rem;
     max-height: 2.5rem;
@@ -273,6 +272,7 @@ body {
     max-width: 2.5rem;
     text-align: center;
 }
+
 .tasks-menu-button {
     padding: 0.5em 1em;
     background-color: var(--logo-yellow);
@@ -358,6 +358,13 @@ body {
 /* caret color */
 .no-caret {
     caret-color: transparent;
+}
+/* font color */
+.green-color {
+    color: green;
+}
+.red-color {
+    color: var(--logo-shadow);
 }
 /* hide scrollbars */
 body::-webkit-scrollbar {
