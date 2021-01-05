@@ -219,7 +219,6 @@ body {
     flex: 1;
     display: flex;
     border-right: 3.5px solid var(--logo-black);
-    border-bottom: 3.5px solid var(--logo-black);
     flex-direction: column;
     width: 20%;
 }
@@ -233,6 +232,7 @@ body {
 /* taks menu containers */
 .tasks-menu {
     flex: 4;
+    border-bottom: 3.5px solid var(--logo-black);
 }
 .tasks-menu-container {
     display: flex;
@@ -282,6 +282,16 @@ body {
     min-width: 200px;
     text-align: center;
     border-bottom: 3.5px solid var(--logo-black);
+    transition: 0.3s;
+}
+.tasks-menu-button:active p {
+    font-weight: 500;
+    transition: 0.3s;
+}
+.tasks-menu-button:active {
+    background-color: var(--message-yellow);
+    transition: 0s;
+    min-width: 180px;
 }
 .tasks-button-delete {
     cursor: pointer;
