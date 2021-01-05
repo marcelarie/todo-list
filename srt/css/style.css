@@ -302,7 +302,7 @@ body {
     transition: all ease-in-out 0.3s;
 }
 .user-points {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
     right: 3%;
     cursor:pointer;
@@ -312,10 +312,11 @@ body {
     margin: auto 0;
     padding: 0.5em;
     cursor: pointer;
+    /* box-shadow: 0 2px var(--logo-black); */
 }
 .user-points span {
     font-size: 1.5em;
-    text-shadow: 0 3px var(--message-shadow);
+    text-shadow: 0 2px var(--message-shadow);
 }
 .user-points:hover {
     transition: 0.3s;
