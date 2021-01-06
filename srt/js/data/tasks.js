@@ -118,7 +118,6 @@ function saveTasksValue() {
     const folderItems = Object.entries(folder['tasks'])
     folderItems.forEach(item => {
         const id = item[0]
-        console.log(item[0])
         const taskDiv = document.getElementById(id)
         const newText = taskDiv.children[1].children[0];
         folder['tasks'][id][0] = newText.value
@@ -127,8 +126,21 @@ function saveTasksValue() {
 
 // listeners
 function taskSideBarListener() {
+    let noTag = "";
     document.addEventListener('click', e => {
         saveOnLocalStorage(folder['tasks'])
+        const tasks = Object.entries(folder['tasks'])
+        // tasks.forEach(t => {
+        // if (t[1][1] === '') {
+        // noTag = true;
+        // console.log('no tag')
+        // }
+        // })
+        // if (noTag === '') {
+        // saveTasks(' ', ' ')
+        // renderTasks();
+        // allListeners();
+        // }
         const taskSide = e.target.parentElement.parentElement;
         if (taskSide.id === 'tasks-sidebar') {
             const targetClasses = e.target.classList;
@@ -137,9 +149,6 @@ function taskSideBarListener() {
             const tag = result[1].slice(4);
             filterTasks(tag);
         }
-        Object.entries(folder).forEach(task => {
-            console.log(task)
-        })
     })
 }
 function deleteButtonListener() {
@@ -164,6 +173,13 @@ function taskHoverListener() {
     }
 }
 
+function saveTasksValuesListener() {
+    document.addEventListener('keyup', () => {
+        saveTasksValue();
+        saveOnLocalStorage(folder['tasks']);
+    })
+}
+
 function taskInputListener() {
     const allTaskInputs = document.querySelectorAll('.tasks-menu-input');
     allTaskInputs.forEach(input => {
@@ -171,17 +187,14 @@ function taskInputListener() {
         const previousTask = taskParent.previousSibling
         input.addEventListener('keydown', e => {
             if (e.key === 'Enter' && input.value.length > 1) {
-                saveTasksValue();
                 const id = saveTasks(' ', ' ')
                 renderTasks();
                 focusId(id);
                 allListeners();
                 saveOnLocalStorage(folder['tasks']);
-                console.log(folder['tasks'])
             }
             if (e.key === 'Backspace' && input.value <= 0) {
                 e.preventDefault();
-                saveTasksValue();
                 previousTask ? deleteTasks(taskParent.id) : 0
                 renderTasks();
                 previousTask ? focusId(previousTask.id) : 0;
@@ -242,6 +255,7 @@ function allListeners() {
     taskInputListener();
     taskImportantListener();
     finishTaskListener();
+    saveTasksValuesListener();
 }
 
 

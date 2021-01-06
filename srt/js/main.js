@@ -8,9 +8,8 @@ export {folder}
 // empty task to start
 if (localStorage.getItem('tasks') !== null) {
     getFromLocalStorage(folder)
-
-    Object.keys(folder).length < 2 ? saveTasks('', '') : 0
-
+} else {
+    saveTasks('', '')
 }
 
 renderTasks();
