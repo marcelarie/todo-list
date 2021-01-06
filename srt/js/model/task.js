@@ -6,6 +6,5 @@ class Task {
     }
 }
 
-const t = new Task('yes', '')
 
 export {Task}

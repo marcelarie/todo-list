@@ -102,6 +102,7 @@ function filterTasks(tag) {
 
     list.forEach(itemList => {
         const currentTask = document.getElementById(itemList[0])
+        itemList[1]
         if (tag.length > 0) {
             itemList[1][1] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
         } else {
@@ -134,6 +135,7 @@ function saveTasksValue() {
 // listeners
 function taskSideBarListener() {
     document.addEventListener('click', e => {
+        saveOnLocalStorage(folder['tasks'])
         const taskSide = e.target.parentElement.parentElement;
         if (taskSide.id === 'tasks-sidebar') {
             const targetClasses = e.target.classList;
@@ -182,6 +184,7 @@ function taskInputListener() {
                 console.log(folder['tasks'])
             }
             if (e.key === 'Backspace' && input.value <= 0) {
+                e.preventDefault();
                 saveTasksValue();
                 previousTask ? deleteTasks(taskParent.id) : 0
                 renderTasks();
@@ -198,6 +201,7 @@ function taskImportantListener() {
     const allTaskTagMenus = document.querySelectorAll('.task-important-button')
     allTaskTagMenus.forEach(tag => {
         tag.addEventListener('click', e => {
+            saveOnLocalStorage(folder['tasks'])
             let textButton = e.target.innerHTML;
             if (textButton === '!') {
                 e.target.innerHTML = '';
@@ -206,6 +210,8 @@ function taskImportantListener() {
                 e.target.innerHTML = '';
                 folder['tasks'][e.target.parentNode.parentNode.id][1] = ''
                 e.target.parentNode.parentNode.classList.toggle('none')
+                e.target.parentNode.children[0].classList.remove('green-color')
+                e.target.parentNode.children[0].classList.add('red-color')
             } else {
                 e.target.innerHTML = '!';
                 folder['tasks'][e.target.parentNode.parentNode.id][1] = '!'
