@@ -126,21 +126,8 @@ function saveTasksValue() {
 
 // listeners
 function taskSideBarListener() {
-    let noTag = "";
     document.addEventListener('click', e => {
         saveOnLocalStorage(folder['tasks'])
-        const tasks = Object.entries(folder['tasks'])
-        // tasks.forEach(t => {
-        // if (t[1][1] === '') {
-        // noTag = true;
-        // console.log('no tag')
-        // }
-        // })
-        // if (noTag === '') {
-        // saveTasks(' ', ' ')
-        // renderTasks();
-        // allListeners();
-        // }
         const taskSide = e.target.parentElement.parentElement;
         if (taskSide.id === 'tasks-sidebar') {
             const targetClasses = e.target.classList;
@@ -156,21 +143,22 @@ function deleteButtonListener() {
         if (e.target.classList.contains('tasks-button-delete')) {
             const currentTaskId = e.target.parentNode.id;
             deleteTasks(currentTaskId)
+            taskHoverListener();
         }
     })
 }
 function taskHoverListener() {
     const taskBar = document.querySelectorAll('.tasks-menu-container')
-    if (taskBar.length > 1) {
-        taskBar.forEach(taskk => {
+    taskBar.forEach(taskk => {
+        if (taskk.children[0].children[0].textContent !== '✓' && taskBar.length > 1) {
             taskk.addEventListener('mouseenter', t => {
                 toggleNone(t.target.children[2])
             })
             taskk.addEventListener('mouseleave', t => {
                 toggleNone(t.target.children[2])
             })
-        })
-    }
+        }
+    })
 }
 
 function saveTasksValuesListener() {

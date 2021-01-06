@@ -5,8 +5,9 @@ import {TaskFolder} from './model/folder.js'
 const folder = {}
 folder['tasks'] = new TaskFolder('tasks')
 export {folder}
+
 // empty task to start
-if (localStorage.getItem('tasks') !== null) {
+if (localStorage.getItem('tasks') !== null && localStorage.getItem('tasks').length > 2) {
     getFromLocalStorage(folder)
 } else {
     saveTasks('', '')
