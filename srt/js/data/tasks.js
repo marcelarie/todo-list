@@ -1,4 +1,4 @@
-import {folder} from '../model/folder.js'
+import {folder} from '../main.js'
 import {saveOnLocalStorage, getFromLocalStorage} from './local-storage.js'
 
 
@@ -102,17 +102,10 @@ function filterTasks(tag) {
 
     list.forEach(itemList => {
         const currentTask = document.getElementById(itemList[0])
-        itemList[1]
         if (tag.length > 0) {
             itemList[1][1] !== tag ? currentTask.classList.add('none') : currentTask.classList.remove('none');
         } else {
             itemList[1][1] === '✓' ? currentTask.classList.add('none') : currentTask.classList.remove('none');
-            if (list.length === 1 && list[0][1][1] !== '') {
-                saveTasksValue();
-                saveTasks(' ', ' ')
-                renderTasks();
-                allListeners();
-            }
         }
     })
 }
@@ -144,6 +137,9 @@ function taskSideBarListener() {
             const tag = result[1].slice(4);
             filterTasks(tag);
         }
+        Object.entries(folder).forEach(task => {
+            console.log(task)
+        })
     })
 }
 function deleteButtonListener() {

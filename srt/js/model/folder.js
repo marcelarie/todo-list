@@ -7,9 +7,6 @@ class TaskFolder {
         return listOfTask;
     }
 }
-const folder = {}
-folder['tasks'] = new TaskFolder('tasks')
-console.log(folder['tasks'])
 
+export {TaskFolder}
 
-export {folder}
